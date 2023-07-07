@@ -19,7 +19,7 @@ const Head = () => {
                     <span></span>
                       <label>EN</label>
                      <span>🏳️‍⚧️</span>
-                    <label>USD</label>
+                    <label>VN</label>
           
        
 
