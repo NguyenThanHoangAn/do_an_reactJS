@@ -16,7 +16,7 @@ const Register = () => {
             <div className="form-box2">
             <div className="form-value">
             <form action="">
-            <h2>Sign in</h2>
+            <h2>Register</h2>
             <div className="inputbox">
             <label htmlFor="">Họ và Tên</label>
              <input type="name" required />
@@ -33,7 +33,7 @@ const Register = () => {
             <label htmlFor="">Số điện thoại</label>
              <input type="Sdt" required />
              </div>
-             <div className="sign-in"><button>Sign in</button></div>
+             <div className="sign-in"><button>Register</button></div>
              <div className="register">
                         <p> Have a account<t>  </t> <Link to="/login"> <a href="#">Log in</a></Link></p>
                     </div>
