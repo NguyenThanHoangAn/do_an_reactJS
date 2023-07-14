@@ -24,7 +24,7 @@ const Login = () => {
              </div>
              <div className="sign-in"><button>Log in</button></div>
              <div className="register">
-                        <p>Don't have a account <Link to="/register"><a href="#">Register</a></Link> </p>
+                        <p>Don't have a account<t> |</t> <Link to="/register"><a href="#">Register</a></Link> </p>
                     </div>
              </form>
              </div>

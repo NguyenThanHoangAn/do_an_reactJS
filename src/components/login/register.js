@@ -35,7 +35,7 @@ const Register = () => {
              </div>
              <div className="sign-in"><button>Register</button></div>
              <div className="register">
-                        <p> Have a account<t>  </t> <Link to="/login"> <a href="#">Log in</a></Link></p>
+                        <p> Have a account<t> |</t> <Link to="/login"> <a href="#">Log in</a></Link></p>
                     </div>
              </form>
              </div>
