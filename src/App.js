@@ -45,8 +45,8 @@ function App() {
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCard} decreaseQty={decreaseQty} />
           </Route>
-          <Route path='/login' exact components={Login}>
-            
+          <Route path='/login' exact >
+            <Login/>
           </Route>
         </Switch>
         <Footer />
