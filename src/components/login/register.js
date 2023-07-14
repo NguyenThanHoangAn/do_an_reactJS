@@ -1,16 +1,26 @@
 import React from "react";
-import "./login.css"
+import "./login.css";
 import { Link } from "react-router-dom"
 
-const Login = () => {
+
+
+
+const Register = () => {
+
+       
     return (
+        
         <>
-          <section className="#">
+        <section>
             <div className="form-box">
             <div className="form-box2">
             <div className="form-value">
             <form action="">
-            <h2>Login</h2>
+            <h2>Sign in</h2>
+            <div className="inputbox">
+            <label htmlFor="">Họ và Tên</label>
+             <input type="name" required />
+             </div>
             <div className="inputbox">
             <label htmlFor="">Email</label>
              <input type="email" required />
@@ -19,20 +29,25 @@ const Login = () => {
              <label htmlFor="">Password</label>
              <input type="password" required />
              </div>
-             <div className="forget">
-             <label htmlFor=""><input type="checkbox"/>Remember Me  <a href="#">Forget Password</a></label>
+             <div className="inputbox">
+            <label htmlFor="">Số điện thoại</label>
+             <input type="Sdt" required />
              </div>
-             <div className="sign-in"><button>Log in</button></div>
+             <div className="sign-in"><button>Sign in</button></div>
              <div className="register">
-                        <p>Don't have a account <Link to="/register"><a href="#">Register</a></Link> </p>
+                        <p> Have a account<t>  </t> <Link to="/login"> <a href="#">Log in</a></Link></p>
                     </div>
              </form>
              </div>
            </div>
            </div>
         </section>
-
         </>
+        
     )
+    
+
+
 }
-export default Login;
+
+export default Register;
