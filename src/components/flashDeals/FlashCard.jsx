@@ -1,4 +1,3 @@
-
 import React, { useState} from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
@@ -68,7 +67,7 @@ const FlashCard = ({ productItems, addToCart }) => {
 
                         </div>
                         <div className="price">
-                            <h4>{productItems.price}.00</h4>
+                            <h4>{productItems.price}.000 VND</h4>
                             <button onClick={() => addToCart(productItems)}>
                                 <i className="fa fa-plus"></i>
                             </button>

@@ -4,27 +4,27 @@ const Categories = () => {
      const data = [
         {
             cateImg: ".assets/images/cate.png",
-            cateName:"Nam",
+            cateName:"NAM",
         },
         {
             cateImg: "./images/category/cat2.png",
-            cateName: "Nữ",
+            cateName: "NỮ",
           },
           {
             cateImg: "./images/category/cat3.png",
-            cateName: "Unisex",
+            cateName: "CAO TUỔI",
           },
           {
             cateImg: "./images/category/cat4.png",
-            cateName: "Home & Garden",
+            cateName: "THANH LỊCH",
           },
           {
             cateImg: "./images/category/cat5.png",
-            cateName: "Gifts",
+            cateName: "NHẸ NHÀNH",
           },
           {
             cateImg: "./images/category/cat6.png",
-            cateName: "Music",
+            cateName: "THƠM LÂU",
           },
          
       

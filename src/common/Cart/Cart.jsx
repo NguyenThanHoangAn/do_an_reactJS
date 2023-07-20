@@ -13,7 +13,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
           
 
           <div className='cart-details'>
-            {CartItem.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
+            {CartItem.length === 0 && <h1 className='no-items product'>GIỎ HÀNG ĐANG TRỐNG</h1>}
 
             
             {CartItem.map((item) => {
@@ -27,8 +27,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      ${item.price}.00 * {item.qty}
-                      <span>${productQty}.00</span>
+                      {item.price}.000 VND SL: {item.qty}
+                      <span>{productQty}.000 VND</span>
                     </h4>
                   </div>
                   <div className='cart-items-function'>
@@ -55,10 +55,10 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
           </div>
 
           <div className='cart-total product'>
-            <h2>Cart Summary</h2>
+            <h2>TỔNG GIỎ HÀNG</h2>
             <div className=' d_flex'>
-              <h4>Total Price :</h4>
-              <h3>${totalPrice}.00</h3>
+              <h4>TỔNG GIÁ TIỀN :</h4>
+              <h3>{totalPrice}.000 VND</h3>
             </div>
           </div>
         </div>
