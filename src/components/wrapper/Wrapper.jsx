@@ -4,24 +4,24 @@ import "./style.css"
 const Wrapper = () => {
     const data = [
         {
-            cover: <i class='fa-solid fa-truck-fast'></i>,
-            title: "Worldwide Delivery",
-            decs: "We offer competitive prices on our 100 million plus product any range.",
+            cover: <i className='fa-solid fa-truck-fast'></i>,
+            title: "Giao hàng trên toàn quốc",
+            decs: "Chúng tôi cung cấp giá cả cạnh tranh trên 100 triệu sản phẩm cộng với bất kỳ phạm vi nào.",
         },
         {
-            cover: <i class='fa-solid fa-id-card'></i>,
-            title: "Safe Payment",
-            decs: "We offer competitive prices on our 100 million plus product any range.",
+            cover: <i className='fa-solid fa-id-card'></i>,
+            title: "Thanh toán an toàn",
+            decs: "Thanh toán nhanh và chính sác từng giây.",
         },
         {
-            cover: <i class='fa-solid fa-shield'></i>,
-            title: "Shop With Confidence ",
-            decs: "We offer competitive prices on our 100 million plus product any range.",
+            cover: <i className='fa-solid fa-shield'></i>,
+            title: "Tự Tin Mua Sắm ",
+            decs: "Các mặt hàng đều chính hãng 100% và được các chuyên gia thẩm định cao.",
         },
         {
-            cover: <i class='fa-solid fa-headset'></i>,
-            title: "24/7 Support ",
-            decs: "We offer competitive prices on our 100 million plus product any range.",
+            cover: <i className='fa-solid fa-headset'></i>,
+            title: "Hỗ Trợ Khách hàng 24/7",
+            decs: "Đội ngũ hỗ trợ luôn túc trực bên khách hàng và giải đáp mọi thắc mắc.",
         },
     ]
     return (

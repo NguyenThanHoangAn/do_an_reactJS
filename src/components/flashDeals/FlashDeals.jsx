@@ -7,10 +7,10 @@ const FlashDeals = ({productItems, addToCart}) => {
         <> 
           <section className='flash background'>
            <div className='container'>
-              <di className='heading f_flex'>
+              <div className='heading f_flex'>
                   <i className='fa fa-bolt'></i>
                   <h1>Flash Deals</h1>
-              </di>
+              </div>
               <FlashCard productItems={productItems} addToCart={addToCart} />
            </div>
           </section>

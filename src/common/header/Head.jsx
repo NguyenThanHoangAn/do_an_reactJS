@@ -11,7 +11,7 @@ const Head = () => {
                     <i className="fa fa-phone"></i>
                     <label >+8654786476565</label>
                     <i className="fa fa-envelope"></i>
-                    <label>exmple@gamil.com</label>
+                    <label>exmple@gmail.com</label>
                     </div>
                   <div className='right row RText'>
                    <label>Theme FAQ"s</label>

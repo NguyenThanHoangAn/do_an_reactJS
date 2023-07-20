@@ -11,7 +11,7 @@
     font-size: 13px;
   }
   .search {
-    padding: 20px 0;
+    padding: 10px 10px;
   }
   .search .logo img {
     width: auto;
@@ -23,7 +23,7 @@
   .search-box {
     width: 80%;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    /*padding: 10px;*/
+    padding: auto;
     border-radius: 50px;
   }
   .search-box i {
@@ -122,7 +122,7 @@
     header ul {
       padding-top: 30px;
     }
-    .nav-links-mobile {
+    .nav-links-MobileMenu {
       position: absolute;
       display: block;
       list-style: none;

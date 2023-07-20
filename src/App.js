@@ -8,6 +8,8 @@ import Sdata from "./components/shop/Sdata"
 import { useState } from 'react';
 import Cart from "./common/Cart/Cart";
 import Footer from './common/footer/Footer';
+import Login from "./components/login/Login";
+import Register from './components/login/register';
 
 
 function App() {
@@ -43,6 +45,12 @@ function App() {
           </Route>
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCard} decreaseQty={decreaseQty} />
+          </Route>
+          <Route path='/login' exact >
+            <Login/>
+          </Route>
+          <Route path='/register' exact >
+            <Register/>
           </Route>
         </Switch>
         <Footer />
