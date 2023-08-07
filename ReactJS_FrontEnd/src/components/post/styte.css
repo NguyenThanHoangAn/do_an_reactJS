@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-section .form-box1{
-    background-image: url("./backgroundlogin.jpg");
+section .form-box{
+    background-image: url("./backgroundloginadmin.jpg");
     background-position: center;
     background-size: cover;
-    padding: 100px 0px;
+    padding: 120px 0px;
     color: #fff;
     align-items: center;
     
     
     
 }
-.form-box2{
+.form-box3{
     position: relative;
     width: 400px;
     height: 500px;
@@ -29,18 +29,18 @@ h2{
     color: #fff;
     text-align: center;
 }
-.inputbox{
+.inputbox1{
     position: relative;
     margin: 30px 0;
     width: 310px;
     border-bottom: 2px solid #fff;
 }
-.inputbox label{
+.inputbox1 label{
     position: absolute;
     top: 50%;
     left: 5px;
-    transform: translateY(-140%);
-    color: #080808;
+    transform: translateY(-120%);
+    color: #a33333;
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
@@ -50,7 +50,7 @@ input:focus ~ label,
 input:focus ~ :valid{
 top: -5px;
 }
-.inputbox input {
+.inputbox1 input {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -60,22 +60,22 @@ top: -5px;
     padding:0 35px 0 5px;
     color: #fff;
 }
-.forget{
+.forget1{
     margin: -15px 0 15px ;
     font-size: .9em;
     color: #fff;
     display: flex;
     justify-content: space-between;  
 }
-.forget label input{
+.forget1 label input{
     margin-right: 3px;
     
 }
-.forget label a{
+.forget1 label a{
     color: #fff;
     text-decoration: none;
 }
-.forget label a:hover{
+.forget1 label a:hover{
     text-decoration: underline;
 }
 .sign-in button{
@@ -89,17 +89,17 @@ top: -5px;
     font-size: 1em;
     font-weight: 600;
 }
-.register{
+.registeradmin{
     font-size: .9em;
     color: #fff;
     text-align: center;
     margin: 25px 0 10px;
 }
-.register p a{
+.registeradmin p a{
     text-decoration: none;
     color: #fff;
     font-weight: 600;
 }
-.register p a:hover{
+.registeradmin p a:hover{
     text-decoration: underline;
 }
