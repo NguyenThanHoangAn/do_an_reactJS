@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../components/assets/images/logo.png"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../context/authContext";
 
 
 const Search = () => {
-  window.addEventListener("scroll", function () {
-    const search = document.querySelector(".search")
-    search.classList.toggle("active", window.scrollY > 100)
-  })
+
+  // window.addEventListener("scroll", function () {
+  //   const search = document.querySelector(".search")
+  //   search.classList.toggle("active", window.scrollY > 100)
+
+    
+  // })
+  const { currentUser, logout} = useContext(AuthContext);
+
 
      return(
          <>
@@ -24,9 +30,17 @@ const Search = () => {
 
           <div className='icon f_flex width'>
             <div className="login">
-            <Link to='/login'>
-              <i className='fa fa-user icon-circle'>
-                </i></Link>  
+            
+              <div className="dropdown">
+                <span>
+                <i className='fa fa-user icon-circle'>
+                </i>
+                </span>
+                <div className="dropdown-content">
+                  <p>{currentUser?.username}</p>
+                  {currentUser ? <p onClick={logout}>Logout</p> : <Link className="link" to="/login">Login</Link>}
+                </div>
+                </div> 
                 </div>
             <div className='cart'>
               <Link to='/cart'>

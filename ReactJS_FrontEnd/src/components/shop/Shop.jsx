@@ -2,6 +2,7 @@ import React from "react";
 import Catg from "./Catg"
 import ShopCart from "./ShopCart"
 import "./Style.css"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Shop =({shopItems , addToCart}) =>{
     return(
@@ -22,7 +23,7 @@ const Shop =({shopItems , addToCart}) =>{
                 </div>
 
                 <div className="product-content grid1">
-                    <ShopCart shopItems={shopItems} addToCart={addToCart}/>
+                 <ShopCart shopItems={shopItems} addToCart={addToCart}/>
                 </div>
                 </div>
             </div>

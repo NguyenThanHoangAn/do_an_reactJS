@@ -7,10 +7,13 @@ import Discount from "../components/discount/Discount";
 import Shop from "../components/shop/Shop";
 import Annu from "../components/annocuments/Annu";
 import Wrapper from "../components/wrapper/Wrapper";
+import Header from "../common/header/Header";
+import Footer from "../common/footer/Footer";
 
 const Pages = ({ productItems, CartItem, addToCart, shopItems }) => {
     return (
         <>
+         <Header/>
             <Home CartItem={CartItem} />
             <FlashDeals productItems={productItems} addToCart={addToCart} />
             <TopCate />
@@ -19,6 +22,7 @@ const Pages = ({ productItems, CartItem, addToCart, shopItems }) => {
             <Shop shopItems={shopItems} addToCart={addToCart} />
             <Annu />
             <Wrapper />
+            <Footer />
         </>
     )
 }

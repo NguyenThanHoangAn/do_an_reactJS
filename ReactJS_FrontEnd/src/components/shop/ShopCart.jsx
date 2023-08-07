@@ -2,6 +2,8 @@
 import React, { useState} from "react"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
+
 
 const ShopCart = ({ shopItems, addToCart }) => {
     const [count, setCount] = useState(0)
@@ -11,19 +13,25 @@ const ShopCart = ({ shopItems, addToCart }) => {
     
     return(
         <>
+        
         {shopItems.map((shopItems) => {
           return (
-        
+            <Link to="/details">
             <div className="box">
+                
                 <div className="product mtop">
+                
                     <div className="img">
                         <span className="discount">{shopItems.discount}% Off</span>
+                        
                         <img src={shopItems.cover} alt=""/>
+                        
                         <div className='product-like'>
                             <label>0</label> <br />
                             <i className="fa-regular fa-heart" onClick={increment}></i>
                         </div>
                     </div>
+                    
                     <div className="product-details">
                         <h3>{shopItems.name}</h3>
                         <div className="rate">
@@ -42,9 +50,13 @@ const ShopCart = ({ shopItems, addToCart }) => {
                         </div>
                     </div>
                 </div>
+               
             </div>
+            </Link>
+           
               )
             })}
+            
         </>
     )
 }

@@ -3,7 +3,7 @@ import React from "react";
 const Categories = () => {
      const data = [
         {
-            cateImg: ".assets/images/cate.png",
+            cateImg: "./images/category/cat1.png",
             cateName:"NAM",
         },
         {
