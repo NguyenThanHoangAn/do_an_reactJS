@@ -2,6 +2,7 @@ import React, { useState} from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const SampleNextArrow = (props) => {
@@ -75,6 +76,7 @@ const FlashCard = ({ productItems, addToCart }) => {
                     </div>
                 </div>
             </div>
+            
               )
             })}
             </Slider>

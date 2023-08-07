@@ -1,5 +1,6 @@
 import React from "react"
 import "./style.css"
+import Header from "../header/Header"
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   
@@ -8,6 +9,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   
   return (
     <>
+    <Header/>
       <section className='cart-items'>
         <div className='container d_flex'>
           
