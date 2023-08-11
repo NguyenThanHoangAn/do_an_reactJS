@@ -44,5 +44,8 @@
   "devDependencies": {
     "eslint-plugin-react": "^7.32.2"
   },
-  "proxy": "http://localhost:8800/api/"
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:8800/api/"
+  }
 }

@@ -3,7 +3,7 @@ const Sdata = {
       {
         id: 7,
         cover: "./images/shops/shops-1.png",
-        name: "MÙI HOA LÀI",
+        name: "Azzaro Wanted",
         price: "180",
         discount: "25",
       },
