@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./login.css";
 import { Link,useHistory} from "react-router-dom";
 import axios from "axios"
-import Login from "./Login";
 import Header from "../../common/header/Header";
 
 
@@ -32,7 +31,6 @@ const Register = () => {
             setError(err.response.data);
         }
     }
-
        
     return (
         
@@ -46,17 +44,17 @@ const Register = () => {
             <h2>Đăng Kí</h2>
             <div className="inputbox">
             <label htmlFor="">Tên Tài Khoản</label>
-             <input type="text" required name="username" onChange={handleChange} />
+             <input type="text"  name="username" required onChange={handleChange} />
              </div>
             <div className="inputbox">
             <label htmlFor="">Email</label>
-             <input type="email" required name="email" onChange={handleChange} />
+             <input type="email" name="email" required onChange={handleChange}  />
              </div>
              <div className="inputbox">
              <label htmlFor="">Mật Khẩu</label>
-             <input type="password" required name="password" onChange={handleChange} />
+             <input type="password" name="password" required onChange={handleChange} />
              </div>
-             <div className="sign-in"><button onClick={handleSubmit}>Đăng Kí</button></div>
+             <div className="sign-in"><button onClick={handleSubmit} >Đăng Kí</button></div>
              {err && <p>{err}</p>}
              <div className="register">
                         <p>Đã có tài khoản<t> |</t> <Link to="/login"> <a href="#">Đăng Nhập</a></Link></p>

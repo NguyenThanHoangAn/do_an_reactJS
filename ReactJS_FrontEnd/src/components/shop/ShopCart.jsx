@@ -5,26 +5,26 @@ import "slick-carousel/slick/slick-theme.css"
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 
+
 const ShopCart = ({ shopItems, addToCart }) => {
     const [count, setCount] = useState(0)
     const increment = () => {
       setCount(count + 1)
     }
-    
     return(
         <>
         
         {shopItems.map((shopItems) => {
           return (
-            <Link to="/details">
-            <div className="box">
+            
+            <div className="box" >
                 
                 <div className="product mtop">
                 
                     <div className="img">
                         <span className="discount">{shopItems.discount}% Off</span>
                         
-                        <img src={shopItems.cover} alt=""/>
+                        <Link to="/details"> <img src={`http://localhost:8800/images/` + shopItems.image} alt=""/></Link>
                         
                         <div className='product-like'>
                             <label>0</label> <br />
@@ -43,7 +43,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
 
                         </div>
                         <div className="price">
-                            <h4>{shopItems.price}.000 VND</h4>
+                            <h4>{shopItems.price} VND</h4>
                             <button onClick={() => addToCart(shopItems)}>
                                 <i className="fa fa-plus"></i>
                             </button>
@@ -52,7 +52,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
                 </div>
                
             </div>
-            </Link>
+            
            
               )
             })}

@@ -5,7 +5,6 @@ import { Link, useHistory} from "react-router-dom"
 import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 import Header from "../../common/header/Header";
-import Footer from "../../common/footer/Footer";
 
 
 const Login = () => {
@@ -51,11 +50,11 @@ const handleSubmit = async e => {
             <h2>Đăng Nhập</h2>
             <div className="inputbox">
             <label htmlFor="">Tên Đăng Nhập</label>
-             <input type="name" required name="username" onChange={handleChange} />
+             <input type="name" name="username" required onChange={handleChange} />
              </div>
              <div className="inputbox">
              <label htmlFor="">Mật Khẩu</label>
-             <input type="password" required name="password" onChange={handleChange} />
+             <input type="password" name="password" required onChange={handleChange} />
              </div>
              <div className="forget">
              <label htmlFor=""><input type="checkbox"/>Nhớ Mật Khẩu  <a href="#">Quên Mật Khẩu</a></label>

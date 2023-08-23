@@ -1,0 +1,101 @@
+
+.ultrong {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.box1 li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+
+.box1 li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.box2 div{
+    margin-left:50%;
+}
+
+.box2 .divbox2{
+  margin-left: 25%;
+  padding-top: 5%;
+}
+.box2 .divadmin {
+  margin-left: 90%;
+}
+.box2 .divbox2 .btncreate {
+  padding: 15px 32px; 
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: SeaGreen; 
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.box2 .divbox2 .btnadmin {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: antiquewhite;
+}
+
+
+.box3 div{
+  margin-left:50%;
+  border: 2px solid rgba(180, 37, 37, 0.5);
+  width: 400px;
+  height: 500px;
+  text-align: center;
+}
+
+.box3 .box3trong label {
+  display: flex;
+  padding-left: 35%;
+  
+}
+.box3 .box3trong input {
+  display: flex;
+  margin: 20px 80px;
+  padding-left: 15%;
+}
+.box3 .h2product {
+  color: black;
+}

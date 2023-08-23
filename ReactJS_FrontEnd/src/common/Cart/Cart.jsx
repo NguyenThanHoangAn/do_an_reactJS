@@ -19,17 +19,17 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
 
             
             {CartItem.map((item) => {
-              const productQty = item.price * item.productQty
+              const productQty = item.price * item.qty
 
               return (
                 <div className='cart-list product d_flex' key={item.id}>
                   <div className='img'>
-                    <img src={item.cover} alt='' />
+                    <img src={`http://localhost:8800/images/` + item.image} alt='' />
                   </div>
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      {item.price}.000 VND SL: {item.qty}
+                      {item.price} VND SL: {item.qty}
                       <span>{productQty}.000 VND</span>
                     </h4>
                   </div>

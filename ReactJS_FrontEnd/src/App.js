@@ -3,24 +3,26 @@ import './App.css';
 import { BrowserRouter as Router,Switch,  Route } from "react-router-dom";
 import Pages from './pages/Pages';
 import Data from "./components/flashDeals/Data"
-import Sdata from "./components/shop/Sdata"
 import { useState } from 'react';
 import Cart from "./common/Cart/Cart";
 import Login from "./components/login/Login";
 import Register from './components/login/register';
+import Details from './components/detail/details';
+import Blog from './components/blog/blog';
 import LoginAdmin from './components/post/LoginAdmin';
 import RegisterAdmin from './components/post/registerAdmin';
 import AdminPage from './components/post/AdminPage';
-import Details from './components/detail/details';
-import Blog from './components/blog/blog';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import ManagerProduct from './components/post/ManagerProduct';
+import AddUser from './components/post/AddUser';
+import UpdateUser from './components/post/UpdateUser';
+
 
 
 
 
 function App() {
-
   const { productItems } = Data
-  const { shopItems } = Sdata
   const [CartItem, setCartItem] = useState([])
 
   const addToCard = (product) => {
@@ -46,7 +48,7 @@ function App() {
       <Router>
         <Switch CartItem={CartItem}>
           <Route path='/' exact>
-            <Pages productItems={productItems} addToCart={addToCard} shopItems={shopItems} />
+            <Pages productItems={productItems} addToCart={addToCard}/>
           </Route>
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCard} decreaseQty={decreaseQty} />
@@ -57,20 +59,31 @@ function App() {
           <Route path='/register' exact >
             <Register/>
           </Route>
+          <Route path="/details" exact>
+            <Details/>
+          </Route>
+          <Route path="/blog" exact>
+            <Blog/>
+          </Route>
           <Route path='/loginadmin' exact>
             <LoginAdmin/>
           </Route>
           <Route path='/registeradmin' exact>
             <RegisterAdmin/>
           </Route>
-          <Route path="/adminpage" exact>
-            <AdminPage/>
+          <Route path="/adminpage" exact render ={() => {
+            return localStorage.getItem("accessToken") ? <AdminPage/> : <Redirect to="/loginadmin"/>
+          }}>
+            
           </Route>
-          <Route path="/details" exact>
-            <Details/>
+          <Route path="/managerproduct" exact>
+            <ManagerProduct/>
           </Route>
-          <Route path="/blog" exact>
-            <Blog/>
+          <Route path="/createuser">
+            <AddUser/>
+          </Route>
+          <Route path="/updateuser">
+            <UpdateUser/>
           </Route>
         </Switch>
       </Router>
