@@ -49,7 +49,7 @@ li {
 }
 input,
 button {
-  border: none;
+  /* border: none; */
   outline: none;
   background-color: none;
 }

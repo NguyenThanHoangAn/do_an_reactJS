@@ -2,7 +2,7 @@ import React from "react";
 import Catg from "./Catg"
 import ShopCart from "./ShopCart"
 import "./Style.css"
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const Shop =({shopItems , addToCart}) =>{
     return(

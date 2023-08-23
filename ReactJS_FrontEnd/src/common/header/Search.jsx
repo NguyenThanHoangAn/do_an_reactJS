@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/authContext";
 
 
-const Search = () => {
+const Search = ({ CartItem }) => {
 
   // window.addEventListener("scroll", function () {
   //   const search = document.querySelector(".search")

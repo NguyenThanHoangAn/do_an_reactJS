@@ -19,7 +19,7 @@ const [err, setError] = useState(null)
 
 const history = useHistory();
 
-const {login} = useContext(AuthContext);
+// const {login} = useContext(AuthContext);
 
 
 const handleChange = e => {
@@ -32,6 +32,7 @@ const handleSubmit = async e => {
     try{
        
       await axios.post("/auth/loginAdmin", inputs)
+      localStorage.setItem("accessToken" , true)
     history.push('/adminpage')
 
     }catch(err){
@@ -59,7 +60,7 @@ const handleSubmit = async e => {
              <div className="forget1">
              <label htmlFor=""><input type="checkbox"/>Nhớ Mật Khẩu  <a href="#">Quên Mật Khẩu</a></label>
              </div>
-             <div className="sign-in"><button onClick={handleSubmit}>Đăng Nhập</button></div>
+             <div className="sign-in"><button type="submit" onClick={handleSubmit}>Đăng Nhập</button></div>
              {err && <p>{err}</p>}
              <div className="registeradmin">
                         <p>Chưa Có Tài Khoản <t> |</t> <Link to="/registeradmin"><a href="#">Đăng Kí</a></Link> </p>

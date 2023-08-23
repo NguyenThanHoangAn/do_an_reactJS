@@ -42,15 +42,15 @@ const handleSubmit = async e => {
             <h2>Đăng Kí</h2>
             <div className="inputbox1">
             <label htmlFor="">Tên Tài Khoản</label>
-             <input type="text" required name="username" onChange={handleChange} />
+             <input type="text"  name="username" onChange={handleChange} required/>
              </div>
             <div className="inputbox1">
             <label htmlFor="">Email</label>
-             <input type="email" required name="email" onChange={handleChange}  />
+             <input type="email"  name="email" onChange={handleChange}  required/>
              </div>
              <div className="inputbox1">
              <label htmlFor="">Mật Khẩu</label>
-             <input type="password" required name="password" onChange={handleChange} />
+             <input type="password" name="password" onChange={handleChange} required />
              </div>
              <div className="sign-in"><button onClick={handleSubmit}>Đăng Kí</button></div>
              {/* {err && <p>{err}</p>} */}
