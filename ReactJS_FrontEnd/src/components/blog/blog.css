@@ -1,0 +1,95 @@
+#page-header {
+    background-image: url("./anh7.png");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#page-header.blog-header {
+    background-image: url("anh7.png");
+}
+
+#blog {
+    padding: 150px 150px 0 150px;
+}
+
+#blog .blog-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+#blog .blog-img {
+    width: 50%;
+    margin-right: 40px;
+}
+
+#blog img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#blog .blog-details {
+    width: 50%;
+}
+
+#blog .blog-details a {
+    text-decoration: none;
+    font-size: 11px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    transition: 0, 3s;
+}
+
+#blog .blog-details a::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    right: -60px;
+}
+
+#blog .blog-details a:hover {
+    color: aqua;
+}
+
+#blog .blog-details a:hover::after {
+    background-color: aqua;
+}
+
+#blog .blog-box h1 {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    font-size: 70px;
+    font-weight: 700;
+    color: #c9cbce;
+    z-index: -9;
+}
+
+#page-header.blog-header h2 {
+
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    color: #fbf9f8;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 20px 0;
+
+}
+
+#page-header.blog-header p {
+    color: #f9f7f6;
+}
