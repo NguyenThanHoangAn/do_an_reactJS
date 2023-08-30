@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <footer>
-                <div className='container grid2'>
+                <div className='container-grid2'>
                     <div className='box'>
                         <h1>Nước Hoa Nhập</h1>
                         <p>Những mẫu nước hoa nổi tiếng và đượcưa chuộng nhất trên thế giới với giá cả hợp lý với túi tiền của người VIệt Nam. Shop luôn muốn sự hài lòng của khách hàng khi dùng nước hoa </p>

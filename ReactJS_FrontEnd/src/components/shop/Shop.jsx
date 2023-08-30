@@ -1,5 +1,4 @@
 import React from "react";
-import Catg from "./Catg"
 import ShopCart from "./ShopCart"
 import "./Style.css"
 
@@ -9,12 +8,12 @@ const Shop =({shopItems , addToCart}) =>{
         <>
         <section className="shop background">
             <div className="container d_flex">
-                <Catg/>
+                
 
                 <div className="contnWidth">
                 <div className="heading d_flex">
                     <div className="heading-left row f_flex">
-                    <h2>NƯỚC HOA</h2>
+                    <h2 style={{color:"black"}}>NƯỚC HOA</h2>
                     </div>
                     <div className="heading-right row">
                         <span>XEM THÊM</span>
