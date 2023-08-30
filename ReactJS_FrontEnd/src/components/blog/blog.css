@@ -15,7 +15,7 @@
 }
 
 #blog {
-    padding: 100px 0;
+    padding: 150px 150px 0 150px;
 }
 
 #blog .blog-box {
@@ -94,18 +94,22 @@
     color: #f9f7f6;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 477px) {
     #blog .blog-box {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-        width: 100%;
-        position: relative;
-        padding-bottom: 90px;
+    }
+
+    #blog {
+        padding: 100px 20px 0 20px;
     }
 
     #blog .blog-img {
         width: 100%;
-
+        margin-right: 0px;
+        margin-bottom: 30px;
     }
 
     #blog .blog-details {
