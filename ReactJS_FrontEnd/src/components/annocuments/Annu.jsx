@@ -1,4 +1,5 @@
 import React from 'react'
+import "./annu.css"
 
 const Annu = () => {
     const mystyle = {
@@ -13,11 +14,13 @@ const Annu = () => {
         <>
             <section className='annocument background'>
                 <div className='container d_flex'>
-                    <div className='img' style={mystyle}>
+                    <div className='banner'>
+                    <div className='img1'>
                         <img src='./images/banner-1.png' width='100%' height='100%' />
                     </div>
-                    <div className='img' style={mystyle1}>
+                    <div className='img2'>
                         <img src='./images/banner-2.png' width='100%' height='100%' />
+                    </div>
                     </div>
                 </div>
             </section>

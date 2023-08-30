@@ -32,7 +32,7 @@ const handleSubmit = async e => {
     try{
        
       await axios.post("/auth/loginAdmin", inputs)
-      localStorage.setItem("accessToken" , true)
+      localStorage.setItem("token", true)
     history.push('/adminpage')
 
     }catch(err){

@@ -1,11 +1,12 @@
 import React, { useEffect, useState} from "react";
 import "./dashboard.css"
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 
 
 const AdminPage = () => {
   const [data, setData] = useState([])
+  const history = useHistory();
   useEffect(() => {
     const readDatas = async () => {
         try {
@@ -26,13 +27,22 @@ const AdminPage = () => {
       console.log(err)
     }
   }
+
+  const handleLogout = () => {
+    axios.post('http://localhost:8800/api/auth/logoutAdmin')
+    .then(res => {
+      localStorage.removeItem("token")
+      history.push('/loginadmin') 
+    }).catch(err => console.log(err));
+  }
     return (
         <>
         <div className="box1">
       <ul className="ultrong">
         <li><a >Manager User</a></li>
         <Link to="/managerproduct"><li><a >Manager Product</a></li></Link>
-         <li><a>Logout</a></li>
+        <Link to="/tableproduct"><li><a>Table Product</a></li></Link>
+         <li onClick={handleLogout}><a>Logout</a></li>
 </ul>
 </div>
 

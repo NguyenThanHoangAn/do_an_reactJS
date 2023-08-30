@@ -45,6 +45,7 @@ const ManagerProduct = () => {
       <ul className="ultrong">
         <Link to="/adminpage"><li><a >Manager User</a></li></Link>
         <li><a >Manager Product</a></li>
+        <Link to="/tableproduct"><li><a>Table Product</a></li></Link>
          <li><a>Logout</a></li>
 </ul>
 </div>

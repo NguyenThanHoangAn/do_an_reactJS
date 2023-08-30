@@ -10,14 +10,15 @@ const TopCate = () => {
                 <div className="heading d_flex">
                     <div className="heading-left row f_flex">
                         <i className="fa fa-border-all"></i>
-                        <h2>Top Catgories</h2>
+                        <h2  style={{color:"black"}}>Top Catgories</h2>
                     </div>
                     <div className="heading-right row">
                         <span>View all</span>
                         <i className="fa fa-care-right"></i>
                     </div>
                 </div>
-                <TopCart/>
+
+                <div className="top"><TopCart/></div>
             </div>
         </section>
         </>

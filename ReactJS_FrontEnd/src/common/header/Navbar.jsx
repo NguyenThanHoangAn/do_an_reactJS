@@ -1,19 +1,28 @@
 import React, { useState }  from "react"
 import { Link } from "react-router-dom"
-
+import "./Navbar.css"
 
 const Navbar = () => {
 
     const [MobileMenu, setMobileMenu] = useState(false)
      return(
          <>
+         
            <header>
            <div className='container d_flex'>
           <div className='catgrories d_flex'>
             <span className='fa-solid fa-border-all'></span>
-            <h4>
-              Categories <i className='fa fa-chevron-down'></i>
-            </h4>
+            <span className="dropdown">
+              <h5 class="dropbtn">Categories  <i className='fa fa-chevron-down' ></i></h5>
+              <div className="dropdown-content" id="myDropdown">
+                <h6>Nam</h6>
+                <h6>Nữ</h6>
+                <h6>Thanh lịch</h6>
+                <h6>Nhẹ nhàng</h6>
+                <h6>Lưu hương</h6>
+                <h6>Quyến rũ</h6>
+              </div>
+            </span>
           </div>
 
           <div className='navlink'>
@@ -23,19 +32,13 @@ const Navbar = () => {
                 <Link to='/'>home</Link>
               </li>
               <li>
-                <Link to='/pages'>pages</Link>
-              </li>
-              <li>
                 <Link to='/blog'>blog</Link>
-              </li>
-              <li>
-                <Link to='/amin'>amin</Link>
               </li>
               <li>
                 <Link to='/track'>order</Link>
               </li>
               <li>
-                <Link to='/contact'>contact</Link>
+                <Link to='/contact'>Contact</Link>
               </li>
             </ul>
 

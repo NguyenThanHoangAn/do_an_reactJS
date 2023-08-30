@@ -2,7 +2,7 @@ import React from "react"
 import "./style.css"
 import Header from "../header/Header"
 
-const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart = ({ CartItem, addToCart, decreaseQty, removeProduct }) => {
   
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
 
@@ -13,7 +13,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
       <section className='cart-items'>
         <div className='container d_flex'>
           
-
+        <div className="colum">
           <div className='cart-details'>
             {CartItem.length === 0 && <h1 className='no-items product'>GIỎ HÀNG ĐANG TRỐNG</h1>}
 
@@ -35,7 +35,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                   </div>
                   <div className='cart-items-function'>
                     <div className='removeCart'>
-                      <button className='removeCart'>
+                      <button className='removeCart' onClick={() => removeProduct(item)}>
                         <i className='fa-solid fa-xmark'></i>
                       </button>
                     </div>
@@ -63,7 +63,10 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
               <h3>{totalPrice}.000 VND</h3>
             </div>
           </div>
+          </div>
         </div>
+        <div><button className="buy-now">Thanh Toán</button></div>
+        
       </section>
     </>
   )

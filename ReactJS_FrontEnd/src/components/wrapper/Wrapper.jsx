@@ -11,7 +11,7 @@ const Wrapper = () => {
         {
             cover: <i className='fa-solid fa-id-card'></i>,
             title: "Thanh toán an toàn",
-            decs: "Thanh toán nhanh và chính sác từng giây.",
+            decs: "Thanh toán nhanh và chính xác từng giây.",
         },
         {
             cover: <i className='fa-solid fa-shield'></i>,
@@ -27,7 +27,7 @@ const Wrapper = () => {
     return (
         <>
             <section className='wrapper background'>
-                <div className='container grid2'>
+                <div className='container-grid2'>
                     {data.map((val, index) => {
                         return (
                             <div className='product' key={index}>

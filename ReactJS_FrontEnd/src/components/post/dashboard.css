@@ -9,6 +9,9 @@
   height: 100%;
   overflow: auto;
 }
+.ultrong li {
+  cursor: pointer;
+}
 
 .box1 li a {
   display: block;
@@ -93,9 +96,19 @@
 }
 .box3 .box3trong input {
   display: flex;
-  margin: 20px 80px;
-  padding-left: 15%;
+  margin: 20px 0;
+  width: 100%;
+  /* padding-left: 15%; */
 }
 .box3 .h2product {
   color: black;
+}
+
+section .div-back {
+  width: 50%;
+  height: 40px;
+  margin: 20px 80px;
+  border-radius: 10px;
+  background-color: aqua;
+  cursor: pointer;
 }

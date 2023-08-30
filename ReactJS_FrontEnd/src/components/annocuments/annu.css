@@ -1,0 +1,23 @@
+.container-d_flex{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.banner{
+display: flex;
+}
+.img1{
+width: "30%";
+height: "340px";
+}
+.img2{
+width: "68%";
+height: "340px";
+}
+@media (max-width: 760px) {
+.banner{
+    display:block;
+ }
+.banner .img{
+    width: 100%;
+}
+}

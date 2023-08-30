@@ -6,6 +6,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 
 
+
 const ShopCart = ({ shopItems, addToCart }) => {
     const [count, setCount] = useState(0)
     const increment = () => {
@@ -13,7 +14,6 @@ const ShopCart = ({ shopItems, addToCart }) => {
     }
     return(
         <>
-        
         {shopItems.map((shopItems) => {
           return (
             
@@ -24,7 +24,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
                     <div className="img">
                         <span className="discount">{shopItems.discount}% Off</span>
                         
-                        <Link to="/details"> <img src={`http://localhost:8800/images/` + shopItems.image} alt=""/></Link>
+                        <Link to={`/details/${shopItems.id}`}> <img src={`http://localhost:8800/images/` + shopItems.image} alt=""/></Link>
                         
                         <div className='product-like'>
                             <label>0</label> <br />

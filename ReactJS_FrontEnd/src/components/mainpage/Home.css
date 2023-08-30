@@ -1,5 +1,6 @@
 .home{
-  margin-top: 20px;
+  margin-top: 10px;
+  padding-left: 5%;
 }
 .homeSlide h1 {
     font-size: 45px;
@@ -42,4 +43,16 @@
   .homeSlide .box img{
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 760px) {
+    .homeSlide .box{
+      display: block !important;
+    }
+    .homeSlide .box .left{
+      width: 100%;
+    }
+    .homeSlide .box .right{
+      width: 100%;
+    }
   }

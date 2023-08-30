@@ -1,7 +1,8 @@
 import express from "express"
 import multer from "multer";
 import path from "path";
-import { register, login, logout, registerAdmin, loginAdmin, registerUser, getEmployees, deleteUser, updateUser, uploadFile, readProduct } from "../controllers/auth.js"
+import { register, login, logout, registerAdmin, loginAdmin, registerUser, getEmployees, deleteUser, updateUser, uploadFile, readProduct
+, logoutAdmin, getProduct, detailProduct } from "../controllers/auth.js"
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -35,6 +36,11 @@ router.post("/upload",upload.single('image'), uploadFile);
 
 router.get("/product", readProduct);
 
+router.post("/logoutAdmin", logoutAdmin);
 
+router.get("/getproduct", getProduct);
+
+
+router.get("/detailproduct/:id", detailProduct);
 
 export default router;

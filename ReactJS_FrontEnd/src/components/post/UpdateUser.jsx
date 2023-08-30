@@ -2,13 +2,13 @@ import React from "react";
 import './dashboard.css'
 import axios from "axios";
 import { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
 const UpdateUser = () => {
     const [user, setUser] = useState({
-        username:"",
+        username: "",
         email:"",
         password:"",
       });
@@ -56,9 +56,11 @@ const UpdateUser = () => {
              <label htmlFor="">Mật Khẩu</label>
              <input required type="password"  name="password" onChange={handleChange} />
              </div>
-             <div className="sign-in"><button type="submit" onClick={handleClick}>Update</button></div>
              {error && "Something went wrong!"}
+             <div className="sign-in"><button type="submit" onClick={handleClick}>Update</button></div>
              </form>
+
+             <div><Link to="/adminpage"><button className="div-back">Quay Lại</button></Link></div>
              </div>
            </div>
            </div>

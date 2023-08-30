@@ -9,9 +9,16 @@ const Dcart =() =>{
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
-        autoplay: true,
-        marign: 200,
-      }
+        responsive:[
+          {
+            breakpoint:760,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+        ],
+      };
+      
     return(
         <>
         <Slider {...settings}>

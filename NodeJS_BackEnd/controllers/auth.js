@@ -25,7 +25,7 @@ export const register = (req, res) => {
             hash,
         ]
 
-        db.query(q, [values], (err,data)=> {
+        db.query(q, [values], (err, data)=> {
             if(err) return res.json(err);
              return res.status(200).json("User has been created");
         } );
@@ -124,7 +124,7 @@ export const loginAdmin = (req, res) => {
         const token = jwt.sign({id:data[0].id}, "jwtkey");
         const {password, ...other} = data[0]
 
-        res.cookie("access_token", token, {
+        res.cookie("token", token, {
             httpOnly: true
         }).status(200).json(other)
 
@@ -225,6 +225,35 @@ export const uploadFile = (req, res) => {
 export const readProduct = (req, res) => {
     const sql = 'SELECT * FROM product';
     db.query(sql, (err, result) => {
+        if(err) return res.json("Error");
+        return res.json(result);
+    })
+}
+
+
+export const logoutAdmin = (req, res) => {
+    res.clearCookie('token');
+    return res.json({Status: "Success"});
+    
+}
+
+export const getProduct = (req, res) => {
+
+    const q = "SELECT * FROM product";
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  };
+
+
+  export const detailProduct = (req, res) => {
+    const productId = req.params.id;
+    const sql = "SELECT * FROM product WHERE id= ? LIMIT 1";
+    db.query(sql,[productId], (err, result) => {
         if(err) return res.json("Error");
         return res.json(result);
     })

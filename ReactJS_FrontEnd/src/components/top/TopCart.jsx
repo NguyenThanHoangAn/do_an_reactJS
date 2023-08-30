@@ -9,7 +9,15 @@ const TopCart = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        responsive: [
+            {
+              breakpoint: 760,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+
       };
     return (
         <>
