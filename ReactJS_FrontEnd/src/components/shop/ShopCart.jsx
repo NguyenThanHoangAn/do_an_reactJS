@@ -43,7 +43,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
 
                         </div>
                         <div className="price">
-                            <h4>{shopItems.price} VND</h4>
+                            <h4>{shopItems.price} $</h4>
                             <button onClick={() => addToCart(shopItems)}>
                                 <i className="fa fa-plus"></i>
                             </button>

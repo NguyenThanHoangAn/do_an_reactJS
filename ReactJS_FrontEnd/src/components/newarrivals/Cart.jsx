@@ -12,7 +12,7 @@ const Cart =() =>{
                             <img src={val.cover} alt="" />
                         </div>
                         <h4>{val.name}</h4>
-                        <span>{val.price}.000 VND</span>
+                        <span>{val.price} $</span>
                     </div>
                 )
             })}

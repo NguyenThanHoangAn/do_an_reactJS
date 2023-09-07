@@ -1,0 +1,46 @@
+.form-pay {
+    margin-left: 10%;
+    margin-top: 40px;
+}
+
+.form-pay label {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.form-pay input {
+    width: 90%;
+    height: 30px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px;
+    
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+  .btnpayment {
+    text-align: center;
+  }
+  .btnpayment .paymentproduct {
+    width: 150px;
+    height: 40px;
+    margin: 40px 40px;
+    border-radius: 4px;
+    background-color: #a29f9f;
+    
+  }

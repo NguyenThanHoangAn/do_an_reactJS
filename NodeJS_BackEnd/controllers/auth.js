@@ -1,9 +1,7 @@
-import { query } from "express";
 import { db } from "../db.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import multer from "multer";
-import path from "path";
+
 
 export const register = (req, res) => {
 
@@ -34,9 +32,10 @@ export const register = (req, res) => {
 };
 
 export const login = (req, res) => {
+
     
     //CHECK USER    
-    const q = "SELECT * FROM user WHERE username = ?"
+    const q = "SELECT * FROM user WHERE username = ? and status = 0"
 
     
 
@@ -53,7 +52,7 @@ export const login = (req, res) => {
         const {password, ...other} = data[0]
 
         res.cookie("access_token", token, {
-            httpOnly: true
+            httpOnly: false
         }).status(200).json(other)
 
 
@@ -165,7 +164,7 @@ export const registerUser = (req, res) => {
 
 export const getEmployees = (req, res) => {
 
-    const q = "SELECT * FROM user";
+    const q = "SELECT * FROM user WHERE status = 0 ";
     db.query(q, (err, data) => {
       if (err) {
         console.log(err);
@@ -178,9 +177,9 @@ export const getEmployees = (req, res) => {
 
  export const deleteUser = (req, res) => {
     const userId = req.params.id;
-    const q = " DELETE FROM user WHERE id = ? ";
+    const q = " UPDATE user SET `status` = 1 WHERE id = ? ";
   
-    db.query(q, [userId], (err, data) => {
+    db.query(q,[userId],   (err, data) => {
       if (err) return res.send(err);
       return res.json(data);
     });
@@ -208,14 +207,15 @@ export const getEmployees = (req, res) => {
 
 export const uploadFile = (req, res) => {
     const image = req.file.filename;
-    const sql = "INSERT product(`name`, `price`, `discount`, `image`) VALUES (?) ";
+    const sql = "INSERT product(`name`, `price`, `discount`,`categories`, `image`) VALUES (?) ";
     const values = [
         req.body.name,
         req.body.price,
         req.body.discount,
+        req.body.categories,
         image,
       ];
-      console.log(values)
+    //   console.log(values)
     db.query(sql, [values], (err, result) => {
         if(err) return res.json({Message: "Error"});
         return res.json({Status: "Success"});
@@ -223,7 +223,7 @@ export const uploadFile = (req, res) => {
 }
 
 export const readProduct = (req, res) => {
-    const sql = 'SELECT * FROM product';
+    const sql = 'SELECT * FROM product WHERE status = 0';
     db.query(sql, (err, result) => {
         if(err) return res.json("Error");
         return res.json(result);
@@ -239,7 +239,7 @@ export const logoutAdmin = (req, res) => {
 
 export const getProduct = (req, res) => {
 
-    const q = "SELECT * FROM product";
+    const q = "SELECT * FROM product WHERE status = 0";
     db.query(q, (err, data) => {
       if (err) {
         console.log(err);
@@ -258,3 +258,147 @@ export const getProduct = (req, res) => {
         return res.json(result);
     })
 }
+
+
+export const oderProduct = (req, res) => {
+    const decoded = jwt.decode(req.body.accessToken);
+        const q = "INSERT INTO dataorder(`userId`,`address`, `phone`, `total`) VALUES (?)"
+        const values = [
+            decoded.id,
+            req.body.userInfo.address,
+            req.body.userInfo.phone,
+            req.body.userInfo.total,
+        ];
+        // console.log(values)
+        db.query(q, [values], (err,data)=> {
+            if(err) return res.json(err);
+             return res.status(200).json("Order has been created");
+        } );
+        
+
+};
+
+
+export const getOrderProduct = (req, res) => {
+    const token = req.headers?.authorization
+    const accessToken = token.replace('Bearer ', '')
+    // console.log(accessToken)
+    const decoded = jwt.decode(accessToken);
+    // console.log(decoded)
+    const q = "SELECT o.*, u.username FROM `dataorder` o LEFT JOIN user u ON o.userId = u.id WHERE o.userId = ?  ";
+    db.query(q,decoded.id, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      console.log(data)
+      return res.json(data);
+    });
+  };
+
+
+  export const searchProduct = (req, res) => {
+    // console.log(req.params.search)
+    const searchproduct = req.params.search;
+    const q = "SELECT * FROM product WHERE name LIKE ? and status = 0";
+    db.query(q,['%' + searchproduct + '%'] , (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      console.log(data)
+      return res.json(data);
+    });
+  };
+
+
+  export const getUserTrash = (req, res) => {
+
+    const q = "SELECT * FROM user WHERE status = 1 ";
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  };
+
+  export const restoreUser = (req, res) => {
+    const userId = req.params.id;
+    const q = " UPDATE user SET `status` = 0 WHERE id = ? ";
+  
+    db.query(q,[userId],   (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+ };
+
+ 
+ export const deleteProduct = (req, res) => {
+    const userId = req.params.id;
+    const q = " UPDATE product SET `status` = 1 WHERE id = ? ";
+  
+    db.query(q,[userId],   (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+ };
+
+ export const getProductTrash = (req, res) => {
+
+    const q = "SELECT * FROM product WHERE status = 1 ";
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  };
+
+ export const restoreProduct = (req, res) => {
+    const productId = req.params.id;
+    const q = " UPDATE product SET `status` = 0 WHERE id = ? ";
+  
+    db.query(q,[productId],   (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+ };
+
+ export const getManagerOrder = (req, res) => {
+    const sql = 'SELECT o.*, u.username FROM `dataorder` o LEFT JOIN user u ON o.userId = u.id WHERE o.status = 0 ';
+    db.query(sql, (err, result) => {
+        if(err) return res.json("Error");
+        return res.json(result);
+    })
+  };
+
+  export const deleteOrder = (req, res) => {
+    const orderId = req.params.id;
+    const q = " UPDATE dataorder SET `status` = 1 WHERE id = ? ";
+  
+    db.query(q,[orderId],   (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+ };
+
+ export const getTrashOrder = (req, res) => {
+    const sql = 'SELECT o.*, u.username FROM `dataorder` o LEFT JOIN user u ON o.userId = u.id WHERE o.status = 1 ';
+    db.query(sql, (err, result) => {
+        if(err) return res.json("Error");
+        return res.json(result);
+    })
+  };
+
+  export const restoreOrder = (req, res) => {
+    const productId = req.params.id;
+    const q = " UPDATE dataorder SET `status` = 0 WHERE id = ? ";
+  
+    db.query(q,[productId],   (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+ };

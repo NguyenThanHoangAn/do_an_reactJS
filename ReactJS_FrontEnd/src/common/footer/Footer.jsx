@@ -50,6 +50,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
+                <div className='copyright'>@Copyright-2023-HOÀNG AN , KIÊN , KHA , TÀI-(71K28KTPM01) by Văn Lang University</div>
             </footer>
         </>
     )

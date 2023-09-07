@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import React  from "react";
 import "./login.css"
 import { Link, useHistory} from "react-router-dom"
-import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 import Header from "../../common/header/Header";
 
@@ -32,6 +31,7 @@ const handleSubmit = async e => {
     try{
        
     await login(inputs)
+    localStorage.setItem("access_token", true)
     history.push('/')
 
     }catch(err){

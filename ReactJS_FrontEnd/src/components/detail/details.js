@@ -4,17 +4,19 @@ import Header from "../../common/header/Header";
 import Footer from "../../common/footer/Footer";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 const Details = ({addToCart}) => {
   let productId  = useParams();
   const [products, setProduct] = useState(null);
   const [qty, setQuantity] = useState (1)
-  // const thisProduct = products.find(prod => prod.id === productId)
+  
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const data = await axios.get(
-          `http://localhost:8800/api/auth/detailproduct/${productId.id}`
+          `http://localhost:8800/api/auth/detailproduct/${productId.id}`, 
+        
         );
         // console.log(data);
         setProduct(data.data[0]);

@@ -99,6 +99,8 @@
     margin: 20px 0;
     margin-left: 50%;
     cursor: pointer;
+    background-color: rgb(0, 255, 140);
+    border-radius: 8px;
   }
   @media (max-width: 760px) {
     .cart-items .colum {

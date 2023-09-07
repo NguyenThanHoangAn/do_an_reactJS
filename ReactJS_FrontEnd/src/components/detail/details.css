@@ -60,3 +60,11 @@ p{
     cursor: pointer;
     border: none;
 }
+
+@media (max-width: 477px) {
+    .pd{
+        padding: 20px 50px;
+        display: block;
+        gap: 50px;
+    }
+}

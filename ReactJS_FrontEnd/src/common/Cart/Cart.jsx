@@ -1,6 +1,8 @@
 import React from "react"
 import "./style.css"
 import Header from "../header/Header"
+import Footer from "../footer/Footer"
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 const Cart = ({ CartItem, addToCart, decreaseQty, removeProduct }) => {
   
@@ -29,8 +31,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeProduct }) => {
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      {item.price} VND SL: {item.qty}
-                      <span>{productQty}.000 VND</span>
+                      {item.price} $ SL: {item.qty}
+                      <span>{productQty} $</span>
                     </h4>
                   </div>
                   <div className='cart-items-function'>
@@ -60,14 +62,14 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeProduct }) => {
             <h2>TỔNG GIỎ HÀNG</h2>
             <div className=' d_flex'>
               <h4>TỔNG GIÁ TIỀN :</h4>
-              <h3>{totalPrice}.000 VND</h3>
+              <h3>{totalPrice}$</h3>
             </div>
           </div>
           </div>
         </div>
-        <div><button className="buy-now">Thanh Toán</button></div>
-        
+        <Link to="/payment"><div><button className="buy-now">Kiểm Tra Đơn Hàng</button></div></Link>
       </section>
+      <Footer/>
     </>
   )
 }

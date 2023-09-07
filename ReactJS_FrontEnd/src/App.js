@@ -16,7 +16,15 @@ import ManagerProduct from './components/post/ManagerProduct';
 import AddUser from './components/post/AddUser';
 import UpdateUser from './components/post/UpdateUser';
 import TableProduct from './components/post/TableProduct';
-
+import Payment from './Payment/Payment';
+import Order from './components/HistoryOrder/Order';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import TrashUser from './components/post/TrashUser';
+import TrashProduct from './components/post/TrashProduct';
+import ManagerOrder from './components/post/ManagerOrder';
+import TrashOrder from './components/post/TrashOrder';
+import SearchProduct from './components/SearchProduct/SearchProduct';
 
 
 
@@ -31,6 +39,7 @@ function App() {
       setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + 1 } : item)))
     } else {
       setCartItem([...CartItem, { ...product, qty: 1 }])
+      toast.success("Sản phẩm đã được thêm vào giỏ hàng");
     }
   }
   const decreaseQty = (product) => {
@@ -57,9 +66,9 @@ function App() {
 
     <>
       <Router>
-        <Switch CartItem={CartItem}>
+        <Switch>
           <Route path='/' exact>
-            <Pages addToCart={addToCard}/>
+            <Pages addToCart={addToCard} CartItem={CartItem}/>
           </Route>
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCard} decreaseQty={decreaseQty} removeProduct={removeProduct} />
@@ -99,8 +108,45 @@ function App() {
           <Route path="/tableproduct">
             <TableProduct/>
           </Route>
+          <Route path="/payment" exact render ={() => {
+            return localStorage.getItem("access_token") ? <Payment CartItem={CartItem}/> : <Redirect to="/login"/>
+          }}>
+            
+          </Route>
+          <Route path="/order"  exact render ={() => {
+            return localStorage.getItem("access_token") ? <Order/> : <Redirect to="/login"/>
+          }}>
+            
+          </Route>
+          <Route path="/trashuser">
+            <TrashUser/>
+          </Route>
+          <Route path="/trashproduct">
+            <TrashProduct/>
+          </Route>
+          <Route path="/managerorder">
+            <ManagerOrder/>
+          </Route>
+          <Route path="/trashorder">
+            <TrashOrder/>
+          </Route>
+          <Route path="/searchproduct">
+            <SearchProduct addToCart={addToCard}/>
+          </Route>
         </Switch>
       </Router>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+/>
       
     </>
   );

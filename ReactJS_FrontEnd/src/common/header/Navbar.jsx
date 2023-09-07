@@ -5,6 +5,7 @@ import "./Navbar.css"
 const Navbar = () => {
 
     const [MobileMenu, setMobileMenu] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
      return(
          <>
          
@@ -12,16 +13,18 @@ const Navbar = () => {
            <div className='container d_flex'>
           <div className='catgrories d_flex'>
             <span className='fa-solid fa-border-all'></span>
-            <span className="dropdown">
-              <h5 class="dropbtn">Categories  <i className='fa fa-chevron-down' ></i></h5>
-              <div className="dropdown-content" id="myDropdown">
-                <h6>Nam</h6>
-                <h6>Nữ</h6>
-                <h6>Thanh lịch</h6>
-                <h6>Nhẹ nhàng</h6>
-                <h6>Lưu hương</h6>
-                <h6>Quyến rũ</h6>
+            <span className="dropdown1">
+              <h5 class="dropbtn">Categories<i onClick={() => setIsOpen(!isOpen)} className='fa fa-chevron-down' ></i></h5>
+              {isOpen && (
+              <div className="dropdown-content1">
+                <p>Chanel</p>
+                <p>Gucci</p>
+                <p>Dior</p>
+                <p>Bvlgari</p>
+                <p>Narciso</p>
+                <p>Burberry</p>
               </div>
+              )}
             </span>
           </div>
 
@@ -35,7 +38,7 @@ const Navbar = () => {
                 <Link to='/blog'>blog</Link>
               </li>
               <li>
-                <Link to='/track'>order</Link>
+                <Link to='/order'>order</Link>
               </li>
               <li>
                 <Link to='/contact'>Contact</Link>

@@ -246,7 +246,7 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 760px) {
   .container-grid2{
       display: block;
       grid-template-columns: 380px;

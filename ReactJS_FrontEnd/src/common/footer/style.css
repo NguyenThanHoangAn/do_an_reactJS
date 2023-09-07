@@ -41,3 +41,6 @@ footer li {
     margin-bottom: 10px;
     opacity: 0.5;
 }
+footer .copyright {
+    text-align: center;
+}

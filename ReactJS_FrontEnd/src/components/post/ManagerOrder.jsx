@@ -4,13 +4,13 @@ import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 
 
-const AdminPage = () => {
+const ManagerOrder = () => {
   const [data, setData] = useState([])
   const history = useHistory();
   useEffect(() => {
     const readDatas = async () => {
         try {
-            const res = await axios.get("http://localhost:8800/api/auth/getEmployees");
+            const res = await axios.get("http://localhost:8800/api/auth/managerorder");
             setData(res.data);
           } catch (err) {
             console.log(err);
@@ -19,9 +19,9 @@ const AdminPage = () => {
      readDatas();
   }, [])
 
-  const handleDelete = async (id)=> {
+  const handleDeleteOrder = async (id)=> {
     try {
-      await axios.put("http://localhost:8800/api/auth/user/"+id)
+      await axios.put("http://localhost:8800/api/auth/deleteorder/"+id)
       window.location.reload()
     } catch (err) {
       console.log(err)
@@ -39,10 +39,10 @@ const AdminPage = () => {
         <>
         <div className="box1">
       <ul className="ultrong">
-        <li><a >Manager User</a></li>
+      <Link to="/adminpage"><li><a >Manager User</a></li></Link>
         <Link to="/managerproduct"><li><a >Manager Product</a></li></Link>
         <Link to="/tableproduct"><li><a>Table Product</a></li></Link>
-        <Link to="/managerorder"><li><a>Manager Order</a></li></Link>
+        <li><a>Manager Order</a></li>
          <li onClick={handleLogout}><a>Logout</a></li>
 </ul>
 </div>
@@ -52,28 +52,26 @@ const AdminPage = () => {
             Hello, Admin
         </div>
        <div className="divbox2">
-        <Link to="/createuser"><button className="btncreate">
-        Tạo Người Dùng
-        </button></Link>
-        <Link to="/trashuser"><button className="btncreate"><i class="fa-regular fa-trash-can"></i></button></Link>
+        <Link to="/trashorder"><button className="btncreate"><i class="fa-regular fa-trash-can"></i></button></Link>
         
         <table id="customers">
     <thead>
   <tr>
-    <th>Mã Người Dùng</th>
-    <th>Tên Người Dùng</th>
-    <th>Email</th>
+    <th>Mã Hóa Đơn</th>
+    <th>Tên người nhận</th>
+    <th>Địa chỉ nhận hàng</th>
+    <th>Tổng tiền</th>
     <th>Action</th>
   </tr>
   </thead>
   <tbody>
-    {data.map((user, index) => {
+  {data.map((order, index) => {
         return <tr key={index}>
-         <td>{user.id}</td>
-         <td>{user.username}</td>
-         <td>{user.email}</td>
-         <button className="btnadmin"><Link to={`/updateuser/${user.id}`}>Edit</Link></button>
-         <button className="btnadmin"onClick={() =>handleDelete(user.id)}>Delete</button>
+         <td>{order.id}</td>
+         <td>{order.username}</td>
+         <td>{order.address}</td>
+         <td>{order.total} $</td>
+         <button className="btnadmin" onClick={() =>handleDeleteOrder(order.id)}>Delete</button>
        </tr>
     })}
  
@@ -89,4 +87,4 @@ const AdminPage = () => {
 
 }
 
-export default AdminPage;
+export default ManagerOrder;
