@@ -31,7 +31,7 @@ router.get("/getEmployees", getEmployees);
 
 router.put("/user/:id", deleteUser);
 
-router.put("/user/:id", updateUser);
+router.put("/user1/:id", updateUser);
 router.post("/upload",upload.single('image'), uploadFile);
 
 router.get("/product", readProduct);

@@ -27,7 +27,7 @@ const UpdateUser = () => {
         e.preventDefault();
     
         try {
-          await axios.put(`http://localhost:8800/api/auth/user/`+ userId, user);
+          await axios.put(`http://localhost:8800/api/auth/user1/`+ userId, user);
           history.push("/adminpage");
         } catch (err) {
           console.log(err);
